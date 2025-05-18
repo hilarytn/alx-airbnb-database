@@ -34,3 +34,14 @@ CREATE INDEX idx_properties_city ON properties(city);
 
 -- Create index on properties.price
 CREATE INDEX idx_properties_price ON properties(price);
+
+-- Measure performance before indexing
+EXPLAIN ANALYZE
+SELECT * FROM bookings WHERE user_id = 5;
+
+-- Add index
+CREATE INDEX idx_bookings_user_id ON bookings(user_id);
+
+-- Measure performance after indexing
+EXPLAIN ANALYZE
+SELECT * FROM bookings WHERE user_id = 5;
