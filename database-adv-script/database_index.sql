@@ -12,3 +12,6 @@ CREATE INDEX idx_properties_city ON properties(city);
 
 -- Create index on properties.price
 CREATE INDEX idx_properties_price ON properties(price);
+
+EXPLAIN ANALYZE
+SELECT * FROM bookings WHERE user_id = 5;
