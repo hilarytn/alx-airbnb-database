@@ -19,8 +19,6 @@ Improve query performance by creating indexes on high-usage columns in the `User
 
 ## SQL Index Creation Commands (`database_index.sql`)
 
-```sql
--- Create index on users.email
 CREATE INDEX idx_users_email ON users(email);
 
 -- Create index on bookings.user_id
